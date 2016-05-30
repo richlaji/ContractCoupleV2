@@ -8,15 +8,85 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
 
-@end
+static NSString* const lovingViewTitle = @"恋爱";
+static NSString* const discoverViewTitle = @"发现";
+static NSString* const chattingViewTitle = @"聊天";
+static NSString* const meViewTitle = @"我";
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    /* Setup RootViewController */
+    //LovingView
+    self.lovingViewController = [[LovingViewController alloc] init];
+    UINavigationController *lovingViewNav = [[UINavigationController alloc] initWithRootViewController:self.lovingViewController];
+    lovingViewNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:lovingViewTitle
+                                                             image:[[UIImage imageNamed:@"menu_love"]
+                                                                 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[[UIImage imageNamed:@"menu_love_on"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    lovingViewNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+    
+    //DiscoverView
+    self.discoverViewController = [[DiscoverViewController alloc] init];
+    UINavigationController *discoverViewNav = [[UINavigationController alloc] initWithRootViewController:self.discoverViewController];
+    discoverViewNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:discoverViewTitle
+                                                             image:[[UIImage imageNamed:@"menu_find"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[[UIImage imageNamed:@"menu_find_on"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    discoverViewNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+    
+    //ChattingView
+    self.chattingViewController = [[ChattingViewController alloc] init];
+    UINavigationController *chattingViewNav = [[UINavigationController alloc] initWithRootViewController:self.chattingViewController];
+    chattingViewNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:chattingViewTitle
+                                                             image:[[UIImage imageNamed:@"menu_chat"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[[UIImage imageNamed:@"menu_chat_on"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    chattingViewNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+    
+    //MeView
+    self.meViewController = [[MeViewController alloc] init];
+    UINavigationController *meViewNav = [[UINavigationController alloc] initWithRootViewController:self.meViewController];
+    meViewNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:meViewTitle
+                                                             image:[[UIImage imageNamed:@"menu_me"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[[UIImage imageNamed:@"menu_me_on"]
+                                                                    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    meViewNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+    
+    //TabBar
+    UITabBarController *rootTabBarView = [[UITabBarController alloc] init];
+    rootTabBarView.viewControllers = @[lovingViewNav, discoverViewNav, chattingViewNav, meViewNav];
+    rootTabBarView.tabBar.tintColor = [UIColor colorWithRed:0.07 green:0.73 blue:0.02 alpha:1.0];
+    rootTabBarView.tabBar.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    //rootTabBarView.selectedIndex = kDefaultTabIndex;
+    
+    //Set Root View
+    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootTabBarView];
+    self.window.rootViewController = rootNav;
+    
+    //Setup navigation
+    /* Setup NavigationBar */
+    
+    //TabBarItem选中字体颜色
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:236.0/255.0 green:67.0/255.0 blue:108.0/255.0 alpha:1.0]}
+                                             forState:UIControlStateSelected];
+    
+    //
+    
+    
+    
     return YES;
 }
 
