@@ -15,7 +15,7 @@
 		3D0ABFA41CFC20A0003ADCCA /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0ABFA31CFC20A0003ADCCA /* DiscoverViewController.m */; };
 		3D0ABFA81CFC2120003ADCCA /* ChattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0ABFA71CFC2120003ADCCA /* ChattingViewController.m */; };
 		3D0ABFAB1CFC2141003ADCCA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0ABFAA1CFC2141003ADCCA /* MeViewController.m */; };
-		3D9D065C1CFC2C14005BF62A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9D065B1CFC2C14005BF62A /* Default-568h@2x.png */; };
+		3D9D065E1CFC6179005BF62A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9D065D1CFC6179005BF62A /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		3D0ABFA71CFC2120003ADCCA /* ChattingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChattingViewController.m; path = ContractCoupleV2/ChattingViewController.m; sourceTree = "<group>"; };
 		3D0ABFA91CFC2141003ADCCA /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = ContractCoupleV2/MeViewController.h; sourceTree = "<group>"; };
 		3D0ABFAA1CFC2141003ADCCA /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeViewController.m; path = ContractCoupleV2/MeViewController.m; sourceTree = "<group>"; };
-		3D9D065B1CFC2C14005BF62A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3D9D065D1CFC6179005BF62A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +52,7 @@
 		3D0ABF7C1CFC1BA5003ADCCA = {
 			isa = PBXGroup;
 			children = (
-				3D9D065B1CFC2C14005BF62A /* Default-568h@2x.png */,
-				3D0ABFA51CFC20AB003ADCCA /* New Group */,
+				3D0ABFA51CFC20AB003ADCCA /* ViewController */,
 				3D0ABF871CFC1BA5003ADCCA /* ContractCoupleV2 */,
 				3D0ABF861CFC1BA5003ADCCA /* Products */,
 			);
@@ -74,6 +73,7 @@
 				3D0ABF8C1CFC1BA5003ADCCA /* AppDelegate.m */,
 				3D0ABF8E1CFC1BA5003ADCCA /* ViewController.h */,
 				3D0ABF8F1CFC1BA5003ADCCA /* ViewController.m */,
+				3D9D065D1CFC6179005BF62A /* Launch Screen.storyboard */,
 				3D0ABF941CFC1BA5003ADCCA /* Assets.xcassets */,
 				3D0ABF991CFC1BA5003ADCCA /* Info.plist */,
 				3D0ABF881CFC1BA5003ADCCA /* Supporting Files */,
@@ -89,7 +89,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3D0ABFA51CFC20AB003ADCCA /* New Group */ = {
+		3D0ABFA51CFC20AB003ADCCA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3D0ABF9F1CFC203A003ADCCA /* LovingViewController.h */,
@@ -101,7 +101,7 @@
 				3D0ABFA91CFC2141003ADCCA /* MeViewController.h */,
 				3D0ABFAA1CFC2141003ADCCA /* MeViewController.m */,
 			);
-			name = "New Group";
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +162,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D9D065E1CFC6179005BF62A /* Launch Screen.storyboard in Resources */,
 				3D0ABF951CFC1BA5003ADCCA /* Assets.xcassets in Resources */,
-				3D9D065C1CFC2C14005BF62A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ContractCoupleV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zzx.ContractCoupleV2;
+				PRODUCT_BUNDLE_IDENTIFIER = zzx.ContractCoupleVTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -284,10 +287,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ContractCoupleV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zzx.ContractCoupleV2;
+				PRODUCT_BUNDLE_IDENTIFIER = zzx.ContractCoupleVTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
